@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TensorFlow Lite Model in Browser</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- TensorFlow.js for TFLite API -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-tflite"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Run TensorFlow Lite Model in the Browser</h1>
+
+        <!-- File input to load an image -->
+        <input type="file" accept="image/*" onchange="loadImage(event)" />
+
+        <!-- Display the uploaded image -->
+        <img id="inputImage" alt="Uploaded Image" style="display:none;" />
+
+        <!-- Canvas to preprocess image -->
+        <canvas id="imageCanvas" style="display:none;"></canvas>
+
+        <!-- Button to run the model -->
+        <button onclick="runModel()">Run Model</button>
+
+        <!-- Display the prediction result -->
+        <p id="result"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
